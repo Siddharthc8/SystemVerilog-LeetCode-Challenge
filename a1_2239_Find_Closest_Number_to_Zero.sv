@@ -56,9 +56,9 @@ module a1_2239_Find_Closest_Number_to_Zero();
 
     foreach (test_cases[i]) begin
       int bf = solver.find_closest_bruteforce(test_cases[i]);
-//      int opt = solver.find_closest_optimized(test_cases[i]);
-      $display("| %p | %4d        |",      // $display("| %p | %4d        | %4d      |", 
-               test_cases[i], bf/*, opt*/); 
+      int opt = solver.find_closest_optimized(test_cases[i]);
+      $display("| %p | %4d        | %4d      |",       
+               test_cases[i], bf, opt); 
     end
 
     #10 $finish;
@@ -66,3 +66,4 @@ module a1_2239_Find_Closest_Number_to_Zero();
 
 
 endmodule
+
