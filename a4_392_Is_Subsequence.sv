@@ -6,20 +6,29 @@
 module a4_392_Is_Subsequence();
 
   class solutions;
+  
+  
     // Method: Check if s is subsequence of t
     function bit isSubsequence(string s, string t);
       int i = 0, j = 0;
+      string res[$]; 
       
-      while (i < s.len() && j < t.len()) begin
-        if (s[i] == t[j]) begin
-          i++;
+      
+      while (i < t.len() && j < s.len()) begin
+        if (s[j] == t[i]) begin
+          res.push_back(string'(s[j]));     // Type converted to "string" as single character in sv is considered a "byte"
+          j++;
         end
-        j++;
+        i++;
       end
       
-      return (i == s.len());
+      $display("The queue is: %p", res);
+      return (j == s.len());
     endfunction
+
   endclass
+  
+  
 
   initial begin
     solutions solver = new();
