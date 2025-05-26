@@ -5,9 +5,10 @@
 
 module a17_54_Spiral_Matrix();
 
+    typedef int ret_type[$];
+
 class solutions;
     
-    typedef int ret_type[$];
     
     function ret_type spiralOrder(input int matrix[$][$]);
     
@@ -30,7 +31,7 @@ class solutions;
     left_wall = -1;
     
     
-    while ( i < m*n ) begin
+    while ( res.size() < m*n ) begin
         if(direction == RIGHT) begin
             while( j < right_wall) begin
                 res.push_back(matrix[i][j]);
